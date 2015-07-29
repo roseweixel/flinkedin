@@ -1,0 +1,11 @@
+<h1>FlinkedIn Profile for <%= @user.name %></h1>
+
+<h3>placeholder for avatar</h3>
+
+<h3>placeholder for resume</h3>
+
+<% if current_user == @user %>
+<%= link_to 'Edit Your Profile', edit_user_path(@user) %>
+<% end %>
+
+<%= link_to 'Back', users_path %>

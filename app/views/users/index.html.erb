@@ -1,0 +1,24 @@
+
+<div class="page-header" id="banner">
+  <h1>All the Flatirons on FlinkedIn</h1>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<ul class="list-group">
+<% @users.each do |user| %>
+  <li class="list-group-item">
+    <%= link_to user.name, user %>
+    <span class="pull-right">
+      <%= button_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
+    </span>
+    <span class="pull-right">
+      <%= button_to 'Edit', edit_user_path(user), class: 'btn btn-primary btn-xs', method: 'get' %>
+    </span>
+  </li>
+<% end %>
+</ul>
+
+<br>
+
+
