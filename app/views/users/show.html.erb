@@ -1,11 +1,25 @@
-<h1>FlinkedIn Profile for <%= @user.name %></h1>
+<div class="row">
+  <div class="col-md-8">
+    <h1>FlinkedIn Profile for <%= @user.name %>
+    </h1>
+  </div>
+  <% if current_user == @user %>
+  <div class="col-md-4">
+    <h1>
+    <%= button_to 'Edit Your Profile', edit_user_path(@user), class: 'btn btn-primary btn-small', method: 'get' %>
+    </h1>
+  </div>
+  <% end %>
+</div>
 
-<h3>placeholder for avatar</h3>
+<div class="row">
+  <div class="col-md-3">
+    <h3><%= image_tag @user.avatar.url %></h3>
+  </div>
 
-<h3>placeholder for resume</h3>
+  <div class="col-md-9">
+    <h3>placeholder for resume</h3>
+  </div>
+</div>
 
-<% if current_user == @user %>
-<%= link_to 'Edit Your Profile', edit_user_path(@user) %>
-<% end %>
 
-<%= link_to 'Back', users_path %>
