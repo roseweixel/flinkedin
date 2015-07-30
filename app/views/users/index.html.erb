@@ -9,12 +9,15 @@
 <% @users.each do |user| %>
   <li class="list-group-item">
     <%= link_to user.name, user %>
+
+    <% if user == current_user %>
     <span class="pull-right">
       <%= button_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %>
     </span>
     <span class="pull-right">
       <%= button_to 'Edit', edit_user_path(user), class: 'btn btn-primary btn-xs', method: 'get' %>
     </span>
+    <% end %>
   </li>
 <% end %>
 </ul>

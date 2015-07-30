@@ -24,4 +24,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def require_user_is_current_user
+    if @user != current_user
+      flash[:alert] = "Access Denied!"
+      redirect_to root_path
+    end
+  end
+
 end

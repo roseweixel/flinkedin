@@ -17,6 +17,7 @@
         <span class="icon-bar"></span>
       </button>
     </div>
+
     <div class="navbar-collapse collapse" id="navbar-main">
       <% if !current_user %>
       <ul class="nav navbar-nav navbar-right">
@@ -24,6 +25,11 @@
         <li><%= link_to 'Sign In', signin_path %></li>
       </ul>
       <% else %>
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to "User Directory", users_path %>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>Hi <%= link_to current_user.name, user_path(current_user), {:style => 'display: inline-block; padding-left: 0; padding-right: 0;'} %>!</li>
         <li><%= link_to 'Sign Out', signout_path %></li>
