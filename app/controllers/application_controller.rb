@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
 
   def logout
     session[:user_id] = nil
-    flash[:notice] = "Goodbye!"
   end
 
   def require_login
