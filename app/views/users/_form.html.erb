@@ -33,6 +33,15 @@
   <div class="form-group">
     <%= f.label :avatar, "Choose a file for your avatar!" %>
     <%= f.file_field :avatar %>
+    <%= f.check_box(:delete_avatar) %>
+    <%= f.label :avatar, "Delete your avatar" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :resume, "Upload your resume!" %>
+    <%= f.file_field :resume %>
+    <%= f.check_box(:delete_resume) %>
+    <%= f.label :delete_resume, "Delete your resume" %>
   </div>
 
   <div class="form-group">

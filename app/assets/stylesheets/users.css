@@ -4,3 +4,15 @@
 .inline {
   display: inline;
 }
+
+.thumb-avatar {
+  border-radius: 50%;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.medium-avatar {
+  border-radius: 50%;
+  max-width: 200px;
+  max-height: 200px;
+}

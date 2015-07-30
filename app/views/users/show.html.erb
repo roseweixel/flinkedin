@@ -6,7 +6,7 @@
   <% if current_user == @user %>
   <div class="col-md-4">
     <h1>
-    <%= button_to 'Edit Your Profile', edit_user_path(@user), class: 'btn btn-primary btn-small', method: 'get' %>
+    <%= button_to 'Edit Your Profile', edit_user_path(@user), class: 'btn btn-primary btn-small pull-right', method: 'get' %>
     </h1>
   </div>
   <% end %>
@@ -14,11 +14,17 @@
 
 <div class="row">
   <div class="col-md-3">
-    <h3><%= image_tag @user.avatar.url %></h3>
+    <h3>
+      <%= image_tag @user.avatar.url(:medium), class: 'medium-avatar' %>
+    </h3>
   </div>
 
   <div class="col-md-9">
-    <h3>placeholder for resume</h3>
+    <% if @user.resume_file_size %>
+      <object width="100%" height="850" data="<%= @user.resume.url %>"></object>
+    <% else %>
+      <h3>Edit your profile to upload a resume!</h3>
+    <% end %>
   </div>
 </div>
 
